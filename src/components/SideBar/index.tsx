@@ -12,7 +12,6 @@ import { SideBarWrapper } from "./styled";
 import { useState } from "react";
 import drawer from "./Drawer";
 import { DRAWER_WIDTH } from "../../constants/sidebar";
-import Header from "../Header";
 
 const SideBar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -25,7 +24,10 @@ const SideBar = () => {
     <SideBarWrapper>
       <Box
         component="nav"
-        sx={{ width: { sm: DRAWER_WIDTH }, flexShrink: { sm: 0 } }}
+        sx={{
+          width: { sm: DRAWER_WIDTH },
+          flexShrink: { sm: 0 },
+        }}
         aria-label="mailbox folders"
       >
         <Drawer

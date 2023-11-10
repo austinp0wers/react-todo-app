@@ -1,3 +1,3 @@
 import styled from "styled-components";
 
-export const SideBarWrapper = styled.header``;
+export const SideBarWrapper = styled.body``;

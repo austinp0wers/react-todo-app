@@ -3,13 +3,13 @@ import { createTheme } from "@mui/material/styles";
 export const themeOptions = createTheme({
   palette: {
     primary: {
-      main: "#3E62FF",
+      main: "#1A1B1D",
     },
     secondary: {
-      main: "#010202",
+      main: "#212121",
     },
     background: {
-      default: "#f9f9f7",
+      default: "#1A1B1D",
     },
   },
   shape: {
@@ -17,7 +17,7 @@ export const themeOptions = createTheme({
   },
   spacing: 30,
   typography: {
-    fontFamily: "Pretendard Variable",
+    fontFamily: "Roboto",
     fontWeightLight: 300,
     fontWeightRegular: 400,
     fontWeightMedium: 500,
