@@ -3,16 +3,17 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { DRAWER_WIDTH } from "../../constants/sidebar";
 import { useState } from "react";
 import { HeaderWrapper } from "./styled";
-import { pageHeaderTitleState } from "../../atoms/index";
+import { mobileSidebarState, pageHeaderTitleState } from "../../atoms/index";
 import { useRecoilState } from "recoil";
 
 const Header = () => {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useRecoilState(mobileSidebarState);
   const [headerTitle, setHeaderTitle] = useRecoilState(pageHeaderTitleState);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+
   return (
     <HeaderWrapper>
       <AppBar

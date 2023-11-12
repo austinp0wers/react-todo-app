@@ -12,9 +12,11 @@ import { SideBarWrapper } from "./styled";
 import { useState } from "react";
 import drawer from "./Drawer";
 import { DRAWER_WIDTH } from "../../constants/sidebar";
+import { useRecoilState } from "recoil";
+import { mobileSidebarState } from "../../atoms";
 
 const SideBar = () => {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useRecoilState(mobileSidebarState);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);

@@ -14,9 +14,9 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <RecoilRoot>
         <ThemeProvider theme={themeOptions}>
-          <Header />
           <AppWrapper>
             <SideBar />
+            <Header />
             <LandingPage />
           </AppWrapper>
         </ThemeProvider>
