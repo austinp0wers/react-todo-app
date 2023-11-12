@@ -4,7 +4,6 @@ export const AppWrapper = styled.main`
   width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: column;
 
   * {
     font-family: "Pretendard Variable", Pretendard, -apple-system,
@@ -16,4 +15,5 @@ export const AppWrapper = styled.main`
 
 export const LandingPageWrapper = styled.div`
   width: 100%;
+  background-color: #1a1b1d;
 `;

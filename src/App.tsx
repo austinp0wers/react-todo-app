@@ -15,8 +15,8 @@ function App() {
       <RecoilRoot>
         <ThemeProvider theme={themeOptions}>
           <AppWrapper>
-            <Header />
             <SideBar />
+            <Header />
             <LandingPage />
           </AppWrapper>
         </ThemeProvider>
