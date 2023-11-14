@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import {
   Divider,
   List,
@@ -7,26 +8,33 @@ import {
   ListItemText,
   Toolbar,
 } from "@mui/material";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+
 import { TOP_MENU_LIST, BOTTOM_MENU_LIST } from "../../../constants/sidebar";
 import { useRecoilState } from "recoil";
 import { pageHeaderTitleState } from "../../../atoms";
-
+import { useNavigate } from "react-router-dom";
+import {
+  findTopMenuIcons,
+  findBottomMenuIcons,
+} from "../../../hooks/SideBar/IconHooks";
 const drawer = () => {
-  const [headerTitle, setHeaderTitle] = useRecoilState(pageHeaderTitleState);
+  const navigate = useNavigate();
+
+  const [, setHeaderTitle] = useRecoilState(pageHeaderTitleState);
   const handleTitle = (text: string) => {
     setHeaderTitle(text);
+    navigate(`/${text.toLowerCase()}`);
   };
+
   return (
     <div>
+      <Toolbar />
+      <Divider />
       <List>
         {TOP_MENU_LIST.map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton onClick={() => handleTitle(text)}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
+              <ListItemIcon>{findTopMenuIcons(index)}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
@@ -36,10 +44,8 @@ const drawer = () => {
       <List>
         {BOTTOM_MENU_LIST.map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
+            <ListItemButton onClick={() => handleTitle(text)}>
+              <ListItemIcon>{findBottomMenuIcons(index)}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>

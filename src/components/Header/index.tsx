@@ -1,26 +1,21 @@
 import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { DRAWER_WIDTH } from "../../constants/sidebar";
-import { useState } from "react";
 import { HeaderWrapper } from "./styled";
 import { mobileSidebarState, pageHeaderTitleState } from "../../atoms/index";
 import { useRecoilState } from "recoil";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useRecoilState(mobileSidebarState);
-  const [headerTitle, setHeaderTitle] = useRecoilState(pageHeaderTitleState);
+  const [headerTitle] = useRecoilState(pageHeaderTitleState);
 
   const handleDrawerToggle = () => {
+    console.log("mobileOpen TRUEE", mobileOpen);
     setMobileOpen(!mobileOpen);
   };
 
   return (
     <HeaderWrapper>
-      <AppBar
-        sx={{
-          width: { sm: `calc(100% - ${DRAWER_WIDTH}px)` },
-        }}
-      >
+      <AppBar position="sticky">
         <Toolbar>
           <IconButton
             color="inherit"

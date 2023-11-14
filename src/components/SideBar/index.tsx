@@ -1,15 +1,5 @@
-import {
-  AppBar,
-  Box,
-  Drawer,
-  IconButton,
-  Toolbar,
-  Typography,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-
+import { Box, Drawer, useMediaQuery } from "@mui/material";
 import { SideBarWrapper } from "./styled";
-import { useState } from "react";
 import drawer from "./Drawer";
 import { DRAWER_WIDTH } from "../../constants/sidebar";
 import { useRecoilState } from "recoil";
@@ -17,8 +7,10 @@ import { mobileSidebarState } from "../../atoms";
 
 const SideBar = () => {
   const [mobileOpen, setMobileOpen] = useRecoilState(mobileSidebarState);
+  const isMobile = useMediaQuery("(max-width:600px)");
 
   const handleDrawerToggle = () => {
+    console.log("mobileOpen", mobileOpen);
     setMobileOpen(!mobileOpen);
   };
 
@@ -33,32 +25,21 @@ const SideBar = () => {
         aria-label="mailbox folders"
       >
         <Drawer
-          variant="temporary"
-          open={mobileOpen}
+          PaperProps={{
+            sx: { backgroundColor: "#191A1C", color: "white" },
+          }}
+          variant={isMobile ? "temporary" : "permanent"}
+          open={isMobile ? mobileOpen : true}
           onClose={handleDrawerToggle}
           ModalProps={{
             keepMounted: true,
           }}
           sx={{
-            display: { sm: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: DRAWER_WIDTH,
             },
           }}
-        >
-          {drawer()}
-        </Drawer>
-        <Drawer
-          variant="permanent"
-          sx={{
-            display: { xs: "none", sm: "block" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: DRAWER_WIDTH,
-            },
-          }}
-          open
         >
           {drawer()}
         </Drawer>
