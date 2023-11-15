@@ -1,12 +1,11 @@
-import { Box, Card, Typography } from "@mui/material";
-import { LandingPageWrapper } from "../components/Layout/Layout";
+import { TodoListWrapper } from "../components/Layout/Layout";
 import TodoList from "../components/Todo-List";
 
 const LandingPage = () => {
   return (
-    <LandingPageWrapper>
+    <TodoListWrapper>
       <TodoList />
-    </LandingPageWrapper>
+    </TodoListWrapper>
   );
 };
 

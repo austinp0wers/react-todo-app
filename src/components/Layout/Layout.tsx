@@ -13,7 +13,13 @@ export const AppWrapper = styled.main`
   }
 `;
 
-export const LandingPageWrapper = styled.div`
+export const TodoListWrapper = styled.div`
   width: 100%;
   background-color: #1a1b1d;
+  color: white;
+`;
+
+export const ContentWrapper = styled.div`
+  flex-direction: column;
+  flex: 7;
 `;
