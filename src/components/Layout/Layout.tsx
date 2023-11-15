@@ -14,9 +14,10 @@ export const AppWrapper = styled.main`
 `;
 
 export const TodoListWrapper = styled.div`
-  width: 100%;
   background-color: #1a1b1d;
   color: white;
+  padding: 30px;
+  height: 100vh;
 `;
 
 export const ContentWrapper = styled.div`
