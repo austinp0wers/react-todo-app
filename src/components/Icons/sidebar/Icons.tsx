@@ -41,3 +41,29 @@ export const findBottomMenuIcons = (index: number) => {
       return <span style={spanStyle}>🗂️</span>;
   }
 };
+
+export const findMenuIconsByName = (menuName: string) => {
+  switch (menuName) {
+    case "Work":
+      //   return <WorkIcon />;
+      return <span>🧳</span>;
+    case "Tasks":
+      //   return <TaskIcon />;
+      return <span>📊</span>;
+    case "Plans":
+      //   return <CalendarTodayIcon />;
+      return <span>📅</span>;
+    case "Important":
+      //   return <PriorityHighIcon />;
+      return <span>❗️</span>;
+    case "Home":
+      //   return <HomeIcon />;
+      return <span>🏠</span>;
+    case "Groceries":
+      //   return <ShoppingBasketIcon />;
+      return <span>🛒</span>;
+    case "Buy List":
+      //   return <ShoppingCartIcon />;
+      return <span>🗂️</span>;
+  }
+};

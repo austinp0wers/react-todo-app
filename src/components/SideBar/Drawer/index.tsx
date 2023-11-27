@@ -16,7 +16,7 @@ import { useNavigate } from "react-router-dom";
 import {
   findTopMenuIcons,
   findBottomMenuIcons,
-} from "../../../hooks/SideBar/IconHooks";
+} from "../../Icons/sidebar/Icons";
 const drawer = () => {
   const navigate = useNavigate();
 
